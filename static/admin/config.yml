@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+# Replace repo with your GitHub owner/name after creating the remote.
+backend:
+  name: github
+  repo: yuehai422/yuehai-site
+  branch: main
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: content/posts
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
+    # Hide section _index.md (no slug) from the posts collection.
+    filter:
+      field: slug
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Body, name: body, widget: markdown }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <link rel="stylesheet" href="{{ "css/site.css" | relURL }}" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+    <nav>
+      <a href="{{ "/posts/" | relURL }}">笔记</a>
+      <a href="{{ "/admin/" | relURL }}">编辑</a>
+    </nav>
+  </header>
+  <main class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="site-footer">
+    <p>{{ .Site.Params.description }}</p>
+  </footer>
+</body>
+</html>
