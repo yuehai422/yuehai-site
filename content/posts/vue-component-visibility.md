@@ -13,7 +13,7 @@ tags: []
 - [Vue 组件封装与可见性](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#vue-%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85%E4%B8%8E%E5%8F%AF%E8%A7%81%E6%80%A7)
 - [响应式与渲染更新](#响应式与渲染更新)
 - [路由守卫与页面标题](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E8%B7%AF%E7%94%B1%E5%AE%88%E5%8D%AB%E4%B8%8E%E9%A1%B5%E9%9D%A2%E6%A0%87%E9%A2%98)
-- [国际化 i18n](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E5%9B%BD%E9%99%85%E5%8C%96-i18n)
+- [国际化 i18n](<#国际化 i18n>)
 - [axios 传参（params / data）](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#axios-%E4%BC%A0%E5%8F%82%EF%BC%88params-data%EF%BC%89)
 - [Promise 与 async](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#promise-%E4%B8%8E-async)
 - [表格勾选与跨页选择](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E8%A1%A8%E6%A0%BC%E5%8B%BE%E9%80%89%E4%B8%8E%E8%B7%A8%E9%A1%B5%E9%80%89%E6%8B%A9)
