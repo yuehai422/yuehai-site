@@ -43,6 +43,8 @@ params:
   DateFormat: "2006-01-02"
   defaultTheme: auto
   disableThemeToggle: false
+  mainSections:
+    - posts
 
   ShowReadingTime: true
   ShowWordCount: true
@@ -55,17 +57,22 @@ params:
   showtoc: false
   tocopen: false
   comments: false
-  # 列表摘要默认隐藏；单篇可用 hideSummary: false 打开
   hideSummary: true
-  # 元信息默认显示；单篇可用 hideMeta: true 隐藏
   hideMeta: false
 
   label:
     text: yuehai
 
-  homeInfoParams:
-    Title: "yuehai"
-    Content: "写给自己的技术笔记与备忘。"
+  # 门户首页：无文章列表，仅简介 + 栏目入口
+  profileMode:
+    enabled: true
+    title: yuehai
+    subtitle: "写给自己的技术笔记与备忘。"
+    buttons:
+      - name: 笔记
+        url: /posts/
+      - name: 摄影
+        url: /photography/
 
   socialIcons:
     - name: github
@@ -77,11 +84,15 @@ menu:
       name: 笔记
       url: /posts/
       weight: 10
+    - identifier: photography
+      name: 摄影
+      url: /photography/
+      weight: 20
     - identifier: search
       name: 搜索
       url: /search/
-      weight: 20
+      weight: 30
     - identifier: admin
       name: 编辑
       url: /admin/
-      weight: 30
+      weight: 40
