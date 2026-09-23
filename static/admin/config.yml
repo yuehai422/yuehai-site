@@ -27,8 +27,8 @@ collections:
       - { label: 显示目录, name: showToc, widget: boolean, default: false }
       - { label: 目录默认展开, name: TocOpen, widget: boolean, default: false }
       - { label: 隐藏摘要, name: hideSummary, widget: boolean, default: true }
-      - { label: 隐藏元信息, name: hideMeta, widget: boolean, default: true }
-      - { label: 搜索中隐藏, name: searchHidden, widget: boolean, default: true }
+      - { label: 隐藏元信息, name: hideMeta, widget: boolean, default: false }
+      - { label: 搜索中隐藏, name: searchHidden, widget: boolean, default: false }
       - { label: 隐藏分享按钮, name: disableShare, widget: boolean, default: false }
       - label: 封面图
         name: cover

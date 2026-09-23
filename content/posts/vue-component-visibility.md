@@ -6,7 +6,7 @@ draft: false
 showToc: true
 TocOpen: false
 hideSummary: true
-hideMeta: true
+hideMeta: false
 searchHidden: false
 disableShare: false
 cover: null
