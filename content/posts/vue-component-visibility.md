@@ -5,11 +5,12 @@ slug: vue-component-visibility
 draft: false
 showToc: true
 TocOpen: false
-tags: []
 hideSummary: true
 hideMeta: true
-searchHidden: true
+searchHidden: false
 disableShare: false
+cover: null
+tags: []
 ---
 
 ## Vue 组件封装与可见性
