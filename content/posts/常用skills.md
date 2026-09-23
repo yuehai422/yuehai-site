@@ -5,11 +5,12 @@ slug: skills
 draft: false
 showToc: false
 TocOpen: false
-tags: []
 hideSummary: true
 hideMeta: true
-searchHidden: true
+searchHidden: false
 disableShare: false
+cover: null
+tags: []
 ---
 
 ###### superpowers-skill使用：
