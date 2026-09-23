@@ -20,6 +20,7 @@ collections:
     # Hide section _index.md (no slug) from the posts collection.
     filter:
       field: slug
+      pattern: ".+"
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Date, name: date, widget: datetime }
