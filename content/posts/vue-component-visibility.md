@@ -6,23 +6,21 @@ draft: false
 tags: []
 ---
 
-# 项目知识库
-
 **目录**
 
-- [Vue 组件封装与可见性](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#vue-%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85%E4%B8%8E%E5%8F%AF%E8%A7%81%E6%80%A7)
+- [Vue 组件封装与可见性](<#Vue 组件封装与可见性>)
 - [响应式与渲染更新](#响应式与渲染更新)
-- [路由守卫与页面标题](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E8%B7%AF%E7%94%B1%E5%AE%88%E5%8D%AB%E4%B8%8E%E9%A1%B5%E9%9D%A2%E6%A0%87%E9%A2%98)
+- [路由守卫与页面标题](#路由守卫与页面标题)
 - [国际化 i18n](<#国际化 i18n>)
-- [axios 传参（params / data）](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#axios-%E4%BC%A0%E5%8F%82%EF%BC%88params-data%EF%BC%89)
-- [Promise 与 async](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#promise-%E4%B8%8E-async)
-- [表格勾选与跨页选择](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E8%A1%A8%E6%A0%BC%E5%8B%BE%E9%80%89%E4%B8%8E%E8%B7%A8%E9%A1%B5%E9%80%89%E6%8B%A9)
-- [列表展示与行内编辑](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA%E4%B8%8E%E8%A1%8C%E5%86%85%E7%BC%96%E8%BE%91)
-- [表单、数字与校验](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E8%A1%A8%E5%8D%95%E3%80%81%E6%95%B0%E5%AD%97%E4%B8%8E%E6%A0%A1%E9%AA%8C)
-- [导出、打印与下载](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E5%AF%BC%E5%87%BA%E3%80%81%E6%89%93%E5%8D%B0%E4%B8%8E%E4%B8%8B%E8%BD%BD)
-- [uni-app / 小程序 / CRM](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#uni-app-%E5%B0%8F%E7%A8%8B%E5%BA%8F-crm)
-- [业务模块备忘](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#%E4%B8%9A%E5%8A%A1%E6%A8%A1%E5%9D%97%E5%A4%87%E5%BF%98)
-- [Git、地图与其它工具](file:///Users/aaron/Desktop/zambiaIP/%E9%A1%B9%E7%9B%AE-%E7%9F%A5%E8%AF%86%E5%BA%93-ghost.html#git%E3%80%81%E5%9C%B0%E5%9B%BE%E4%B8%8E%E5%85%B6%E5%AE%83%E5%B7%A5%E5%85%B7)
+- [axios 传参（params / data）](<#axios 传参（params / data）>)
+- [Promise 与 async](<#Promise 与 async>)
+- [表格勾选与跨页选择](#表格勾选与跨页选择)
+- [列表展示与行内编辑](#列表展示与行内编辑)
+- [表单、数字与校验](#表单、数字与校验)
+- [导出、打印与下载](#导出、打印与下载)
+- [uni-app / 小程序 / CRM](<#uni-app / 小程序 / CRM>)
+- [业务模块备忘](#业务模块备忘)
+- [Git、地图与其它工具](#Git、地图与其它工具)
 
 ## Vue 组件封装与可见性
 
