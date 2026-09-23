@@ -3,6 +3,8 @@ title: 项目知识库
 date: 2026-09-19
 slug: vue-component-visibility
 draft: false
+showToc: true
+TocOpen: false
 tags: []
 ---
 
