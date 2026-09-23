@@ -3,6 +3,8 @@ title: 常用skills
 date: 2026-09-23T14:28:00
 slug: skills
 draft: false
+showToc: true
+TocOpen: false
 tags: []
 ---
 
