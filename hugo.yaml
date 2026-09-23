@@ -1,6 +1,7 @@
 # Phase A: Cloudflare Pages preview first; custom domain later.
 baseURL: "https://yuehai.space/"
 locale: zh-CN
+timeZone: Asia/Shanghai
 title: yuehai
 enableRobotsTXT: true
 
