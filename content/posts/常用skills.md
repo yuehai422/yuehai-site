@@ -155,6 +155,7 @@ audit -> optimize -> adapt -> harden -> polish
 [中文版](https://github.com/vinvcn/mattpocock-skills-zh-CN)
 
 ###### vue-admin-standards：
+
 项目规范skill：使用项目规范关键字即可，eg：检查该页面是否符合项目规范
 
 [📎SKILL.md](https://www.yuque.com/attachments/yuque/0/2026/markdown/57443523/1789008202999-0bb9ae91-922a-4dca-9467-b128dd2f5d4a.markdown)
