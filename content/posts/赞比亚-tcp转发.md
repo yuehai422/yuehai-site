@@ -5,7 +5,7 @@ slug: Zambia-tcp
 draft: false
 showToc: true
 TocOpen: false
-hideSummary: false
+hideSummary: true
 hideMeta: false
 searchHidden: false
 disableShare: false
