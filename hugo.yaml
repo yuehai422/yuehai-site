@@ -6,7 +6,7 @@ title: yuehai
 enableRobotsTXT: true
 
 params:
-  description: "个人技术笔记（Hugo + Sveltia CMS · Phase A）"
+  description: "写给自己的技术笔记与备忘。"
 
 markup:
   goldmark:
