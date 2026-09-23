@@ -5,11 +5,12 @@ slug: Zambia-tcp
 draft: false
 showToc: true
 TocOpen: false
-tags: []
-hideSummary: true
-hideMeta: true
-searchHidden: true
+hideSummary: false
+hideMeta: false
+searchHidden: false
 disableShare: false
+cover: null
+tags: []
 ---
 
 # 将赞比亚公司电脑设置成节点，做 TCP 转发
