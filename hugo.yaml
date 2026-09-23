@@ -45,16 +45,20 @@ params:
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: false
+  ShowWordCount: true
+  ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
-  ShowWordCount: false
   UseHugoToc: true
-  showtoc: true
+  # 目录仅由文章 CMS 的 showToc / TocOpen 控制
+  showtoc: false
   tocopen: false
   comments: false
-  hideSummary: false
+  # 列表摘要默认隐藏；单篇可用 hideSummary: false 打开
+  hideSummary: true
+  # 元信息默认隐藏；单篇可用 hideMeta: false 打开
+  hideMeta: true
 
   label:
     text: yuehai

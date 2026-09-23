@@ -6,6 +6,10 @@ draft: false
 showToc: true
 TocOpen: false
 tags: []
+hideSummary: true
+hideMeta: true
+searchHidden: true
+disableShare: false
 ---
 
 ## Vue 组件封装与可见性

@@ -1,5 +1,4 @@
 # yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
-# Replace repo with your GitHub owner/name after creating the remote.
 backend:
   name: github
   repo: yuehai422/yuehai-site
@@ -17,7 +16,6 @@ collections:
     slug: "{{slug}}"
     extension: md
     format: yaml-frontmatter
-    # Hide section _index.md (no slug) from the posts collection.
     filter:
       field: slug
       pattern: ".+"
@@ -28,5 +26,18 @@ collections:
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: 显示目录, name: showToc, widget: boolean, default: false }
       - { label: 目录默认展开, name: TocOpen, widget: boolean, default: false }
+      - { label: 隐藏摘要, name: hideSummary, widget: boolean, default: true }
+      - { label: 隐藏元信息, name: hideMeta, widget: boolean, default: true }
+      - { label: 搜索中隐藏, name: searchHidden, widget: boolean, default: true }
+      - { label: 隐藏分享按钮, name: disableShare, widget: boolean, default: false }
+      - label: 封面图
+        name: cover
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { label: 图片（可留空）, name: image, widget: image, required: false }
+          - { label: 图片说明, name: alt, widget: string, required: false }
+          - { label: 本篇隐藏封面, name: hidden, widget: boolean, default: false }
       - { label: Tags, name: tags, widget: list, required: false }
       - { label: Body, name: body, widget: markdown }
