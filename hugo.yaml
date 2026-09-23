@@ -1,26 +1,83 @@
-# Phase A: Cloudflare Pages preview first; custom domain later.
+# yuehai.space — Hugo + PaperMod + Sveltia CMS
 baseURL: "https://yuehai.space/"
+title: yuehai
+languageCode: zh-cn
+defaultContentLanguage: zh
 locale: zh-CN
 timeZone: Asia/Shanghai
-title: yuehai
+theme: PaperMod
 enableRobotsTXT: true
 
-params:
-  description: "写给自己的技术笔记与备忘。"
+pagination:
+  pagerSize: 8
+
+permalinks:
+  posts: /posts/:slug/
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  section:
+    - HTML
+    - RSS
+  page:
+    - HTML
+
+minify:
+  disableXML: true
+  minifyOutput: true
 
 markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
 
-permalinks:
-  posts: /posts/:slug/
+params:
+  env: production
+  description: "写给自己的技术笔记与备忘。"
+  author: yuehai
+  DateFormat: "2006-01-02"
+  defaultTheme: auto
+  disableThemeToggle: false
 
-disableKinds:
-  - taxonomy
-  - term
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  UseHugoToc: true
+  showtoc: true
+  tocopen: false
+  comments: false
+  hideSummary: false
 
-outputs:
-  home: [HTML]
-  section: [HTML]
-  page: [HTML]
+  label:
+    text: yuehai
+
+  homeInfoParams:
+    Title: "yuehai"
+    Content: "写给自己的技术笔记与备忘。"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/yuehai422"
+
+menu:
+  main:
+    - identifier: posts
+      name: 笔记
+      url: /posts/
+      weight: 10
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 20
+    - identifier: admin
+      name: 编辑
+      url: /admin/
+      weight: 30

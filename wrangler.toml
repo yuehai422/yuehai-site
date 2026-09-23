@@ -1,5 +1,8 @@
 # Cloudflare Workers static assets (Git-connected deploy).
-# Build runs first (hugo → public/), then: npx wrangler deploy
+# Build command (dashboard):
+#   git submodule update --init --recursive && hugo --gc --minify
+# Output directory: public
+# Env: HUGO_VERSION=0.166.0 (or >= 0.146.0)
 name = "yuehai-site"
 compatibility_date = "2026-09-22"
 workers_dev = true
