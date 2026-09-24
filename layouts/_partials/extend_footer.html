@@ -1,0 +1,10 @@
+{{- /* Site footer extensions */ -}}
+{{- if and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") }}
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress__bar"></div>
+</div>
+{{- with resources.Get "js/scroll-progress.js" }}
+{{- $js := . | minify | fingerprint }}
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}
+{{- end }}

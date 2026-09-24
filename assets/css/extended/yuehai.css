@@ -672,4 +672,30 @@ html.photo-lightbox-open {
   .photo-tile:focus-visible .photo-tile__img {
     transform: none;
   }
+
+  .scroll-progress__bar {
+    transition: none;
+  }
+}
+
+/* —— Scroll reading progress (singles) —— */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  z-index: 100;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.scroll-progress__bar {
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 80ms linear;
+  will-change: transform;
 }
