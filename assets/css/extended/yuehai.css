@@ -1,50 +1,50 @@
-/* yuehai · 海岳冷青 — PaperMod extended theme */
+/* yuehai · 海岳克莱因 — PaperMod extended theme (#002FA7) */
 
 :root {
   --gap: 26px;
   --content-gap: 22px;
   --radius: 10px;
-  --accent: #156f82;
-  --accent-soft: rgba(21, 111, 130, 0.12);
-  --theme: #f3f6f7;
+  --accent: #002fa7;
+  --accent-soft: rgba(0, 47, 167, 0.1);
+  --theme: #f3f5f9;
   --entry: #ffffff;
-  --primary: #122028;
-  --secondary: #5c6f7a;
-  --tertiary: #c5d3da;
-  --content: #1c2c35;
-  --code-block-bg: #1a2a33;
-  --code-bg: #e7eef1;
-  --border: #d4e0e6;
+  --primary: #10182a;
+  --secondary: #5a6578;
+  --tertiary: #c5ccd9;
+  --content: #1a2233;
+  --code-block-bg: #161c2a;
+  --code-bg: #e8ebf2;
+  --border: #d0d6e4;
   --font-display: "Fraunces", "Songti SC", "Noto Serif SC", Georgia, serif;
   --font-body: "Source Sans 3", "PingFang SC", "Hiragino Sans GB", sans-serif;
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --accent: #6ec4d4;
-  --accent-soft: rgba(110, 196, 212, 0.14);
-  --theme: #10181d;
-  --entry: #182228;
-  --primary: #e6eef2;
-  --secondary: #8fa8b4;
-  --tertiary: #314650;
-  --content: #c8d6dd;
-  --code-block-bg: #182228;
-  --code-bg: #1c2a32;
-  --border: #2a3c46;
+  --accent: #7b93ff;
+  --accent-soft: rgba(123, 147, 255, 0.14);
+  --theme: #0e121c;
+  --entry: #161b28;
+  --primary: #e6eaf2;
+  --secondary: #8f9ab0;
+  --tertiary: #2c3448;
+  --content: #c5cddd;
+  --code-block-bg: #161b28;
+  --code-bg: #1a2030;
+  --border: #2a3346;
   color-scheme: dark;
 }
 
 .list {
   background:
-    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(21, 111, 130, 0.07), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 100% 0%, rgba(21, 111, 130, 0.04), transparent 50%),
+    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(0, 47, 167, 0.07), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 0%, rgba(0, 47, 167, 0.04), transparent 50%),
     var(--code-bg);
 }
 
 [data-theme="dark"] .list {
   background:
-    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(110, 196, 212, 0.08), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(123, 147, 255, 0.08), transparent 55%),
     var(--theme);
 }
 
@@ -336,7 +336,7 @@ details.toc summary {
 }
 
 [data-theme="dark"] .top-link {
-  color: #102018;
+  color: #0a1028;
 }
 
 @keyframes yuehai-rise {
