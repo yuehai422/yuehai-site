@@ -13,6 +13,7 @@ pagination:
 
 permalinks:
   posts: /posts/:slug/
+  photography: /photography/:slug/
 
 outputs:
   home:

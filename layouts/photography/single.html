@@ -1,0 +1,129 @@
+{{- define "main" }}
+
+{{- /* Collect images: cover + markdown ![]() in body */ -}}
+{{- $images := slice -}}
+{{- with .Params.cover.image }}
+  {{- if not ($.Param "cover.hidden") }}
+    {{- $images = $images | append (dict
+      "src" (. | absURL)
+      "alt" ($.Params.cover.alt | default $.Title | plainify)
+    ) }}
+  {{- end }}
+{{- end }}
+
+{{- $re := `!\[([^\]]*)\]\((\S+?)(?:\s+"([^"]*)")?\)` -}}
+{{- range findRESubmatch $re .RawContent -}}
+  {{- $alt := index . 1 -}}
+  {{- $src := index . 2 -}}
+  {{- $title := index . 3 | default "" -}}
+  {{- if not (urls.Parse $src).IsAbs -}}
+    {{- $src = $src | absURL -}}
+  {{- end -}}
+  {{- $caption := $alt -}}
+  {{- if eq $caption "" }}{{ $caption = $title }}{{ end -}}
+  {{- if eq $caption "" }}{{ $caption = $.Title | plainify }}{{ end -}}
+  {{- $images = $images | append (dict "src" $src "alt" $caption) -}}
+{{- end -}}
+
+{{- /* Body text without markdown images (shown as wall instead) */ -}}
+{{- $body := replaceRE $re "" .RawContent -}}
+{{- $body = replaceRE `\n{3,}` "\n\n" $body -}}
+{{- $page := . -}}
+
+<article class="post-single photo-album">
+  <div class="photo-section">
+    <header class="post-header">
+      {{ partial "breadcrumbs.html" . }}
+      <h1 class="post-title entry-hint-parent">
+        {{ .Title }}
+        {{- if .Draft }}
+        <span class="entry-hint" title="Draft">
+          <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+            <path d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+          </svg>
+        </span>
+        {{- end }}
+      </h1>
+      {{- if not (.Param "hideMeta") }}
+      <div class="post-meta">
+        {{- partial "post_meta.html" . -}}
+      </div>
+      {{- end }}
+    </header>
+
+    {{- with strings.TrimSpace $body }}
+    <div class="post-content md-content photo-album-intro">
+      {{ . | $page.RenderString }}
+    </div>
+    {{- end }}
+
+    {{- if $images }}
+    <div class="photo-wall photo-wall--lightbox" role="list">
+      {{- range $i, $img := $images }}
+      <button
+        type="button"
+        class="photo-tile photo-tile--button"
+        role="listitem"
+        data-photo-index="{{ $i }}"
+        data-photo-src="{{ $img.src }}"
+        data-photo-alt="{{ $img.alt }}"
+        aria-label="查看大图：{{ $img.alt }}"
+      >
+        <span class="photo-tile__media">
+          <img
+            class="photo-tile__img"
+            src="{{ $img.src }}"
+            alt="{{ $img.alt }}"
+            loading="lazy"
+            decoding="async"
+          />
+        </span>
+        {{- if $img.alt }}
+        <span class="photo-tile__meta">
+          <span class="photo-tile__title">{{ $img.alt }}</span>
+        </span>
+        {{- end }}
+      </button>
+      {{- end }}
+    </div>
+    {{- else }}
+    <p class="photo-section-empty">本专题还没有图片。在正文中插入 Markdown 图片，或设置封面图。</p>
+    {{- end }}
+
+    <footer class="post-footer">
+      {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+      <ul class="post-tags">
+        {{- range ($.GetTerms $tags) }}
+        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        {{- end }}
+      </ul>
+    </footer>
+  </div>
+</article>
+
+{{- if $images }}
+<dialog class="photo-lightbox" id="photo-lightbox" aria-label="摄影灯箱">
+  <div class="photo-lightbox__chrome">
+    <button type="button" class="photo-lightbox__btn photo-lightbox__close" data-lightbox-close aria-label="关闭">
+      <span aria-hidden="true">×</span>
+    </button>
+    <button type="button" class="photo-lightbox__btn photo-lightbox__prev" data-lightbox-prev aria-label="上一张">
+      <span aria-hidden="true">‹</span>
+    </button>
+    <figure class="photo-lightbox__stage">
+      <img class="photo-lightbox__img" alt="" />
+      <figcaption class="photo-lightbox__caption"></figcaption>
+    </figure>
+    <button type="button" class="photo-lightbox__btn photo-lightbox__next" data-lightbox-next aria-label="下一张">
+      <span aria-hidden="true">›</span>
+    </button>
+    <p class="photo-lightbox__counter" data-lightbox-counter hidden></p>
+  </div>
+</dialog>
+{{- with resources.Get "js/photography-lightbox.js" }}
+{{- $js := . | minify | fingerprint }}
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}
+{{- end }}
+
+{{- end }}

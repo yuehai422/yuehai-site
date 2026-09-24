@@ -339,6 +339,301 @@ details.toc summary {
   color: #0a1028;
 }
 
+/* —— Photography masonry wall + lightbox —— */
+.main:has(.photo-section) {
+  max-width: min(1280px, calc(100% - var(--gap) * 2));
+}
+
+.photo-section {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+.photo-section-intro,
+.photo-album-intro {
+  margin-bottom: 1.75rem;
+  color: var(--secondary);
+  max-width: 40rem;
+}
+
+.photo-section-empty {
+  color: var(--secondary);
+  letter-spacing: 0.02em;
+  margin: 1.5rem 0 0;
+}
+
+/* Pinterest-style waterfall via CSS columns */
+.photo-wall {
+  column-count: 2;
+  column-gap: 0.85rem;
+  margin: 0.75rem 0 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .photo-wall {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 900px) {
+  .photo-wall {
+    column-count: 4;
+    column-gap: 1rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .photo-wall {
+    column-count: 5;
+  }
+}
+
+.photo-tile {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  margin: 0 0 0.85rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+  isolation: isolate;
+  transition: transform 0.22s ease;
+}
+
+@media (min-width: 900px) {
+  .photo-tile {
+    margin-bottom: 1rem;
+  }
+}
+
+.photo-tile--button {
+  font: inherit;
+}
+
+.photo-tile__media {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--entry);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--primary) 6%, transparent);
+  transition:
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+}
+
+.photo-tile__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.photo-tile__fallback {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(ellipse 80% 70% at 30% 20%, var(--accent-soft), transparent 60%),
+    var(--code-bg);
+}
+
+.photo-tile__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.55rem 0.15rem 0.15rem;
+  color: var(--primary);
+}
+
+.photo-tile__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.photo-tile__date {
+  font-size: 0.78rem;
+  color: var(--secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.photo-tile:hover,
+.photo-tile:focus-visible {
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.photo-tile:hover .photo-tile__media,
+.photo-tile:focus-visible .photo-tile__media {
+  box-shadow: 0 10px 28px -16px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.photo-tile:hover .photo-tile__img,
+.photo-tile:focus-visible .photo-tile__img {
+  transform: scale(1.02);
+}
+
+.photo-tile:focus-visible .photo-tile__media {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.photo-lightbox {
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+}
+
+.photo-lightbox::backdrop {
+  background: color-mix(in srgb, #05070f 82%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.photo-lightbox__chrome {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+  width: min(100vw, 100%);
+  height: min(100vh, 100%);
+  padding: 1rem;
+  box-sizing: border-box;
+  gap: 0.5rem;
+}
+
+.photo-lightbox__stage {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  max-width: min(92vw, 1100px);
+  max-height: min(82vh, 900px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.photo-lightbox__img {
+  max-width: 100%;
+  max-height: min(74vh, 820px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 18px 48px -24px rgba(0, 0, 0, 0.55);
+}
+
+.photo-lightbox__img--flash {
+  animation: yuehai-lightbox-fade 0.28s ease;
+}
+
+.photo-lightbox__caption {
+  color: #d7deea;
+  font-size: 0.92rem;
+  text-align: center;
+  max-width: 40rem;
+  letter-spacing: 0.02em;
+}
+
+.photo-lightbox__counter {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin: 0;
+  color: #9aa6bc;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+}
+
+.photo-lightbox__btn {
+  appearance: none;
+  border: 1px solid color-mix(in srgb, #fff 22%, transparent);
+  background: color-mix(in srgb, #0a1028 55%, transparent);
+  color: #f5f7fb;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  line-height: 1;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.photo-lightbox__btn:hover,
+.photo-lightbox__btn:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.photo-lightbox__close {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.photo-lightbox__prev {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.photo-lightbox__next {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+html.photo-lightbox-open {
+  overflow: hidden;
+}
+
+@keyframes yuehai-lightbox-fade {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-lightbox__prev,
+  .photo-lightbox__next {
+    display: none;
+  }
+
+  .photo-lightbox__stage {
+    grid-column: 1 / -1;
+  }
+}
+
 @keyframes yuehai-rise {
   from {
     opacity: 0;
@@ -353,7 +648,11 @@ details.toc summary {
 @media (prefers-reduced-motion: reduce) {
   .main .profile,
   .home-info.first-entry,
-  .post-entry {
+  .post-entry,
+  .photo-tile,
+  .photo-tile__img,
+  .photo-tile__media,
+  .photo-lightbox__img--flash {
     animation: none;
     transition: none;
   }
@@ -363,7 +662,14 @@ details.toc summary {
   }
 
   .post-entry:hover,
-  .post-entry:focus-within {
+  .post-entry:focus-within,
+  .photo-tile:hover,
+  .photo-tile:focus-visible {
+    transform: none;
+  }
+
+  .photo-tile:hover .photo-tile__img,
+  .photo-tile:focus-visible .photo-tile__img {
     transform: none;
   }
 }

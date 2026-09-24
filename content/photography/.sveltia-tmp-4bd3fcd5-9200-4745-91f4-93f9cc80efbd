@@ -1,0 +1,25 @@
+---
+title: 示例专题
+date: 2026-09-24T10:00:00+08:00
+slug: sample-album
+draft: false
+hideSummary: true
+hideMeta: false
+searchHidden: false
+disableShare: true
+cover:
+  image: https://picsum.photos/seed/yuehai-cover/1200/1200
+  alt: 示例封面
+  hidden: false
+tags: []
+---
+
+草稿示例专题，用来预览网格墙与灯箱。正式发布前请在 CMS 中取消 Draft，或删除本篇。
+
+![晨光](https://picsum.photos/seed/yuehai-a/1600/1066)
+
+![巷口](https://picsum.photos/seed/yuehai-b/1200/1500)
+
+![水边](https://picsum.photos/seed/yuehai-c/1400/1400)
+
+![夜色](https://picsum.photos/seed/yuehai-d/1600/900)

@@ -9,8 +9,8 @@ public_folder: /images/uploads
 
 collections:
   - name: posts
-    label: Posts
-    label_singular: Post
+    label: 笔记
+    label_singular: 笔记
     folder: content/posts
     create: true
     slug: "{{slug}}"
@@ -30,6 +30,51 @@ collections:
       - { label: 隐藏元信息, name: hideMeta, widget: boolean, default: false }
       - { label: 搜索中隐藏, name: searchHidden, widget: boolean, default: false }
       - { label: 隐藏分享按钮, name: disableShare, widget: boolean, default: false }
+      - label: 封面图
+        name: cover
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { label: 图片（可留空）, name: image, widget: image, required: false }
+          - { label: 图片说明, name: alt, widget: string, required: false }
+          - { label: 本篇隐藏封面, name: hidden, widget: boolean, default: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # 摄影栏目首页（_index）；Sveltia 默认不把 _index 放进下方 folder 集合
+  - name: photography_pages
+    label: 摄影
+    files:
+      - name: photography_home
+        label: 摄影首页
+        file: content/photography/_index.md
+        format: yaml-frontmatter
+        fields:
+          - { label: 标题, name: title, widget: string }
+          - { label: Draft, name: draft, widget: boolean, default: false }
+          - { label: 隐藏摘要, name: hideSummary, widget: boolean, default: true }
+          - { label: 隐藏分享按钮, name: disableShare, widget: boolean, default: true }
+          - { label: Body, name: body, widget: markdown }
+
+  # 预留：专题 / 单组作品；可空，新建后出现在 /photography/<slug>/
+  - name: photography
+    label: 摄影作品
+    label_singular: 作品
+    folder: content/photography
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: 隐藏摘要, name: hideSummary, widget: boolean, default: true }
+      - { label: 隐藏元信息, name: hideMeta, widget: boolean, default: false }
+      - { label: 搜索中隐藏, name: searchHidden, widget: boolean, default: false }
+      - { label: 隐藏分享按钮, name: disableShare, widget: boolean, default: true }
       - label: 封面图
         name: cover
         widget: object
