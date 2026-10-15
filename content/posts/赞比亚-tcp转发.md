@@ -224,7 +224,8 @@ bash · 看转发日志复制
 journalctl -u zambia-forward -e --no-pager
 ```
 
-源自
+源自[2652bb2b-5014-49e4-9895-bcfac811334d](files/uploads/%E8%B5%9E%E6%AF%94%E4%BA%9A-%E5%9B%BD%E5%86%85Linux%E4%B8%AD%E8%BD%AC%E5%AE%9E%E6%96%BD%E6%96%B9%E6%A1%88.md)
+
 
 
 ### 内网地址查询
