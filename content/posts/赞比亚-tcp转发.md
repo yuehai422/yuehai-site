@@ -224,7 +224,7 @@ bash · 看转发日志复制
 journalctl -u zambia-forward -e --no-pager
 ```
 
-源自[赞比亚-国内Linux中转实施方案.md](/files/uploads/赞比亚-国内Linux中转实施方案.md)
+源自：[赞比亚-国内Linux中转实施方案.md](/files/uploads/赞比亚-国内Linux中转实施方案.md)
 
 ### 内网地址查询
 
