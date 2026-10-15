@@ -6,6 +6,59 @@
   <meta name="robots" content="noindex" />
   <title>Content Manager · yuehai</title>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
+  <script type="module">
+    const FILE_PREFIX = '/files/uploads/';
+    const ACCEPT =
+      '.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.txt,.md';
+
+    const displayName = (filePath = '') => {
+      const name = String(filePath).split('/').pop() || '附件';
+      try {
+        return decodeURIComponent(name);
+      } catch {
+        return name;
+      }
+    };
+
+    CMS.registerEditorComponent({
+      id: 'file-link',
+      label: '附件',
+      icon: 'attach_file',
+      trigger: 'button',
+      fields: [
+        {
+          name: 'file',
+          label: '文件',
+          widget: 'file',
+          media_folder: 'static/files/uploads',
+          public_folder: '/files/uploads',
+          choose_url: false,
+          accept: ACCEPT,
+        },
+        {
+          name: 'text',
+          label: '显示文字',
+          widget: 'string',
+          required: false,
+        },
+      ],
+      pattern: /\[([^\]]+)\]\((\/files\/uploads\/[^)\s]+)\)/,
+      fromBlock: (match) => ({
+        text: match[1],
+        file: match[2],
+      }),
+      toBlock: ({ file = '', text = '' } = {}) => {
+        if (!file) return '';
+        const label = text.trim() || displayName(file);
+        return `[${label}](${file})`;
+      },
+      toPreview: ({ file = '', text = '' } = {}) => {
+        if (!file) return '';
+        const label = text.trim() || displayName(file);
+        return `<a href="${file}">${label}</a>`;
+      },
+    });
+  </script>
 </head>
 <body>
 </body>
