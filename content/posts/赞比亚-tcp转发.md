@@ -23,7 +23,7 @@ Starlink 无法公网入站、软路由装不了 Tailscale 时，用国内 Linux
 中转 192.168.0.108端口 20152不改默认路由 / DNS / 财务
 ```
 
-## 1方案一句话
+## 1方案
 
 国内 Linux（同时跑财务）只充当 **Tailscale 客户端 + socat 端口转发**， 把软路由打来的 Shadowsocks TCP 流量转到赞比亚 Windows 上的 Xray； 全程旁路，禁止 Exit Node / 子网路由 / DNS 接管。
 
@@ -226,8 +226,6 @@ journalctl -u zambia-forward -e --no-pager
 
 源自[2652bb2b-5014-49e4-9895-bcfac811334d](files/uploads/%E8%B5%9E%E6%AF%94%E4%BA%9A-%E5%9B%BD%E5%86%85Linux%E4%B8%AD%E8%BD%AC%E5%AE%9E%E6%96%BD%E6%96%B9%E6%A1%88.md)
 
-
-
 ### 内网地址查询
 
 Windows：`ipconfig`，看「IPv4 地址」
@@ -289,11 +287,3 @@ linux，内网 192.168.0.108
 
 <!-- 这是一张图片，ocr 内容为：没有分流规则?点我前往去添加. XRAY SOCKS:[菲律宾原生IP] 默认 前置代理节点 默认前置代理 当使用时,本机将首先连接到此节点,然后再使用此节点连接到默认节点落地. 域名解析策略 IPONDEMAND ASLS:只使用域名进行路由选择.默认值. IPIFNONMATCH:当域名没有匹配任何规则时,将域名解析成IP(A 记录或AA 记录)再次进行匹配 IPONDEMAND:当匹配时碰到任何基于IP的规则,将域名立即解析为IP进行匹配. HYBRID 域名匹配算法 -->
 ![](https://cdn.nlark.com/yuque/0/2026/png/57443523/1785394992812-dd041019-1169-441a-aa73-9b38f692e0fe.png)
-
-### 相关文档
-
-- [赞比亚静态ip方案.md](./赞比亚静态ip方案.md)
-- [赞比亚星链Tailscale实施方案.md](./赞比亚星链Tailscale实施方案.md)
-- [赞比亚链路故障排查手册.md](./赞比亚链路故障排查手册.md)
-- [赞比亚现场排查检查表.md](./赞比亚现场排查检查表.md)
-- [赞比亚-TCP转发操作手册.md](./赞比亚-TCP转发操作手册.md)（步骤化重写版）
