@@ -166,3 +166,9 @@ audit -> optimize -> adapt -> harden -> polish
 项目规范skill：使用项目规范关键字即可，eg：检查该页面是否符合项目规范
 
 [📎SKILL.md](https://www.yuque.com/attachments/yuque/0/2026/markdown/57443523/1789008202999-0bb9ae91-922a-4dca-9467-b128dd2f5d4a.markdown)
+
+**archify：**
+
+将一段话、一个计划、一个代码仓库变成互动式网页流程图：
+
+[https://github.com/tt-a1i/archify](https://github.com/tt-a1i/archify)
