@@ -13,6 +13,10 @@ cover: null
 tags: []
 ---
 
+###### **长期记忆memos：**
+
+[https://github.com/MemTensor/MemOS](https://github.com/MemTensor/MemOS)
+
 ###### superpowers-skill使用：
 
 ![](/images/uploads/pasted-image-1790144432676.png)
