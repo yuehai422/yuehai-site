@@ -13,21 +13,21 @@ cover: null
 tags: []
 ---
 
-###### **长期记忆memos：**
+### **长期记忆memos：**
 
 [https://github.com/MemTensor/MemOS](https://github.com/MemTensor/MemOS)
 
-###### superpowers-skill使用：
+### superpowers-skill使用：
 
 ![](/images/uploads/pasted-image-1790144432676.png)
 
-###### anthropics frontend-desgin skill:
+### anthropics frontend-desgin skill:
 
 ![](/images/uploads/pasted-image-1790144482234.png)
 
 ![](/images/uploads/pasted-image-1790144491931.png)
 
-###### 按场景推荐的impeccable命令流
+### 按场景推荐的impeccable命令流
 
 下面是可直接套用的流程，按你现在这种前端页面迭代场景来排。
 
@@ -145,33 +145,35 @@ critique -> layout -> typeset -> clarify -> polish
 
 audit -> optimize -> adapt -> harden -> polish
 
-###### andrej-skills:
+### andrej-skills:
 
 按 andrej-skills 规则：先列3步计划+验证点，再实施，最后汇报改动文件和验证结果。
 
-###### caverman-skill：简化输出
+### caverman-skill：简化输出
 
 ![](/images/uploads/pasted-image-1790144582930.png)
 
 ![](/images/uploads/pasted-image-1790144591611.png)
 
-###### explain-diff-optimization:用于解释修改代码，并生成html页面和相应题目：
+### explain-diff-optimization:
+
+###### 用于解释修改代码，并生成html页面和相应题目：
 
 [📎SKILL.md](https://www.yuque.com/attachments/yuque/0/2026/markdown/57443523/1789008027577-ed7fecfd-a60a-45d2-b773-a0b1225f6c0e.markdown)
 
-###### mattpocock中的handoff，teach，grill-with-docs（grilling，domain-modeling)，code-review
+### mattpocock中的handoff，teach，grill-with-docs（grilling，domain-modeling)，code-review
 
 [https://github.com/mattpocock/skills](https://github.com/mattpocock/skills)
 
 [中文版](https://github.com/vinvcn/mattpocock-skills-zh-CN)
 
-###### vue-admin-standards：
+### vue-admin-standards：
 
 项目规范skill：使用项目规范关键字即可，eg：检查该页面是否符合项目规范
 
 [📎SKILL.md](https://www.yuque.com/attachments/yuque/0/2026/markdown/57443523/1789008202999-0bb9ae91-922a-4dca-9467-b128dd2f5d4a.markdown)
 
-**archify：**
+### **archify：**
 
 将一段话、一个计划、一个代码仓库变成互动式网页流程图：
 
